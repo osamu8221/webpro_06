@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.team %></title>
+</head>
+<body>
+  <h2><%= data.team %>の編集</h2>
+  <form action="/110.1/update/<%= data.id - 1 %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>開催数</td><td><input type="text" name="code" value="<%= data.id %>"></td></tr>
+      <tr><td>優勝チーム</td><td><input type="text" name="team" value="<%= data.team %>"></td></tr>
+      <tr><td>ドライバー</td><td><input type="text" name="driver" value="<%= data.driver%>"></td></tr>
+      <tr><td>勝利ラウンド数</td><td><input type="text" name="time" value="<%= data.time %>"></td></tr>
+      <tr><td>ポイント数</td><td><input type="text" name="point" value="<%= data.point %>"></td></tr>
+      <tr><td>メーカー</td><td><input type="text" name="maker" value="<%= data.maker %>"></td></tr>
+    </table>
+    <input type="submit" values="登録">
+  </form>
+  <a href="/110.1.ejs/">駅一覧に戻る</a>
+</body>
+</html>

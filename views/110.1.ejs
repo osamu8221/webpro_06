@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SUPER GTのGT500歴代優勝チーム</title>
+</head>
+<body>
+  <h2>SUPER GTのGT500歴代優勝チームの詳細</h2>
+  <table>
+    <tr><th>開催数</th><th>年度</th><th>GT500優勝チーム</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr><td><%= row.id %></td>
+        <td><%= row.code %></td>
+        <td><a href="/110.1/<%= number %>"><%= row.team %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <a href="/110.1/create">追加</a>
+</body>
+</html>

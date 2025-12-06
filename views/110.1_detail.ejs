@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.team %></title>
+</head>
+<body>
+  <h2><%= data.team %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>開催数</td><td>第<%= data.code %>回大会</td></tr>
+    <tr><td>優勝チーム</td><td><%= data.team %></td></tr>
+    <tr><td>ドライバー</td><td><%= data.driver %></td></tr>
+    <tr><td>勝利ラウンド数</td><td><%= data.time %></td></tr>
+    <tr><td>ポイント数</td><td><%= data.point %></td></tr>
+    <tr><td>メーカー</td><td><%= data.maker %></td></tr>
+  </table>
+  <a href="/110.1/edit/<%= id %>">編集</a>
+  <a href="/110.1.ejs">駅一覧に戻る</a>
+</body>
+</html>
