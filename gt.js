@@ -1,9 +1,13 @@
+"use strict"; 
+
 const express = require("express");
+const path = require("path"); 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
+
 
 let GT = [
   { id:1, code:"2005", team:"ZENT cerumo supra", driver:"立川祐路 / 高木虎之介", maker:"TOYOTA",time:3, point:67 },
@@ -29,69 +33,57 @@ let GT = [
   { id:21, code:"2025", team:"au TOM’S GR Supra", driver:"坪井 翔/山下 健太",maker:"TOYOTA", time:3, point:80.5 },
 ];
 
-// 一覧
-app.get("/110.1", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
-  res.render('110.1', {data: GT} );
+
+app.get("/gt", (req, res) => {
+  res.render('gt', {data: GT} );
 });
 
-// Create
-app.get("/110.1/create", (req, res) => {
-  res.redirect('/public/110.1.html');
+
+app.get("/gt/create", (req, res) => {
+  res.sendFile(path.join(__dirname, "gt.html"));
 });
 
-// Read
-app.get("/110.1/:number", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
+
+app.get("/gt/:number", (req, res) => {
   const number = req.params.number;
   const detail = GT[ number ];
-  res.render('110.1_detail.ejs', {id: number, data: detail} );
+  res.render('gt_detail', {id: number, data: detail} );
 });
 
-// Delete
-app.get("/110.1/delete/:number", (req, res) => {
-  // 本来は削除の確認ページを表示する
-  // 本来は削除する番号が存在するか厳重にチェックする
-  // 本来ならここにDBとのやり取りが入る
+
+app.get("/gt/delete/:number", (req, res) => {
   GT.splice( req.params.number, 1 );
-  res.redirect('/110.1' );
+  res.redirect('/gt'); 
 });
 
-// Create
-app.post("/110.1", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
-  const id = GT.length + 1;
-  const code = req.body.code;
-  const team = req.body.team;
-  const driver = req.body.driver;
-  const time = req.body.time;
-  const point = req.body.point;
-  const maker =req.body.maker;
-  GT.push( { id: id, code: code, team: team, driver: driver, time: time, point: point } );
-  console.log( GT );
-  res.render('110.1', {data: GT} );
+
+app.post("/gt", (req, res) => {
+  const id = GT.length > 0 ? GT[GT.length - 1].id + 1 : 1;
+  const { code, team, driver, time, point, maker } = req.body;
+  
+  GT.push( { id, code, team, driver, time, point, maker } );
+  res.redirect('/gt');
 });
 
-// Edit
-app.get("/110.1/edit/:number", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
+
+app.get("/gt/edit/:number", (req, res) => {
   const number = req.params.number;
   const detail = GT[ number ];
-  res.render('110.1_edit.ejs', {id: number, data: detail} );
+  res.render('gt_edit', {id: number, data: detail} );
 });
 
-// Update
-app.post("/110.1/update/:number", (req, res) => {
-  // 本来は変更する番号が存在するか，各項目が正しいか厳重にチェックする
-  // 本来ならここにDBとのやり取りが入る
-  GT[req.params.number].code = req.body.code;
-  GT[req.params.number].team = req.body.team;
-  GT[req.params.number].driver = req.body.driver;
-  GT[req.params.number].time = req.body.time;
-  GT[req.params.number].point = req.body.point;
-  GT[req.params.number].code = req.body.maker;
-  console.log( GT );
-  res.redirect('/110.1.html' );
+
+app.post("/gt/update/:number", (req, res) => {
+  const n = req.params.number;
+  if (GT[n]) {
+    GT[n].code = req.body.code;
+    GT[n].team = req.body.team;
+    GT[n].driver = req.body.driver;
+    GT[n].time = req.body.time;
+    GT[n].point = req.body.point;
+    GT[n].maker = req.body.maker;
+  }
+  res.redirect('/gt'); 
 });
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

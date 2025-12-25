@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.team %> の詳細</title>
+</head>
+<body>
+    <h2>チーム詳細情報</h2>
+    <table border="1">
+        <tr><th>ID</th><td><%= data.id %></td></tr>
+        <tr><th>年度</th><td><%= data.code %></td></tr>
+        <tr><th>チーム名</th><td><%= data.team %></td></tr>
+        <tr><th>ドライバー</th><td><%= data.driver %></td></tr>
+        <tr><th>勝利数</th><td><%= data.time %></td></tr>
+        <tr><th>ポイント</th><td><%= data.point %></td></tr>
+        <tr><th>メーカー</th><td><%= data.maker %></td></tr>
+    </table>
+    <br>
+    <a href="/gt/edit/<%= id %>">このデータを編集する</a> | 
+    <a href="/gt/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')">このデータを削除する</a>
+    <br><br>
+    <a href="/gt">一覧に戻る</a>
+</body>
+</html>

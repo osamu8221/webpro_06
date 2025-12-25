@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.year %>年 <%= data.name %> の詳細</title>
+</head>
+<body>
+    <h2>大会詳細情報</h2>
+    <table border="1">
+        <tr><th>年度</th><td><%= data.year %></td></tr>
+        <tr><th>大会名</th><td><%= data.name %></td></tr>
+        <tr><th>優勝者</th><td><%= data.champion %></td></tr>
+        <tr><th>準優勝者</th><td><%= data.semi %></td></tr>
+        <tr><th>開催地</th><td><%= data.venue %></td></tr>
+        <tr><th>開催月</th><td><%= data.date %></td></tr>
+        <tr><th>コート</th><td><%= data.surface %></td></tr>
+        <tr><th>賞金</th><td><%= data.prize %></td></tr>
+    </table>
+
+    <br>
+    <a href="/tennis/edit/<%= data.id %>">このデータを編集する</a>
+    <br><br>
+    <a href="/tennis">一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の編集</title>
+</head>
+<body>
+  <h2><%= data.name %> (<%= data.year %>) の編集</h2>
+  <form action="/tennis/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>ID</td><td><%= data.id %></td></tr>
+      
+      <tr><td>年度</td><td><input type="text" name="year" value="<%= data.year %>"></td></tr>
+      <tr><td>大会名</td><td><input type="text" name="name" value="<%= data.name %>"></td></tr>
+      <tr><td>優勝者</td><td><input type="text" name="champion" value="<%= data.champion %>"></td></tr>
+      <tr><td>準優勝者</td><td><input type="text" name="semi" value="<%= data.semi %>"></td></tr>
+      <tr><td>開催地</td><td><input type="text" name="venue" value="<%= data.venue %>"></td></tr>
+      <tr><td>開催月</td><td><input type="text" name="date" value="<%= data.date %>"></td></tr>
+      <tr><td>コート</td><td><input type="text" name="surface" value="<%= data.surface %>"></td></tr>
+      <tr><td>賞金</td><td><input type="text" name="prize" value="<%= data.prize %>"></td></tr>
+    </table>
+    <input type="submit" value="更新">
+  </form>
+  <a href="/tennis">一覧に戻る</a>
+  <a href="/tennis/delete/<%= data.id %>" onclick="return confirm('本当に削除しますか？')">このデータを削除する</a>
+</body>
+</html>

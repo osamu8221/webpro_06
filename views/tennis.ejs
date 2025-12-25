@@ -1,0 +1,66 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>グランドスラム歴代優勝者一覧</title>
+</head>
+<body>
+    <h2>グランドスラム歴代優勝者一覧</h2>
+    <table border="1">
+    <thead>
+        <tr>
+        <th>年度</th>
+        <th>全豪オープン</th>
+        <th>全仏オープン</th>
+        <th>ウィンブルドン</th>
+        <th>全米オープン</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% 
+      // データは全豪→全仏→ウィンブルドン→全米の順で並んでいる前提で、
+      // 4つ飛ばしでループを回して1行(1年分)を作ります
+        for( let i = 0; i < data.length; i += 4 ) { 
+        const aus = data[i];     // 全豪
+        const fre = data[i+1];   // 全仏
+        const wim = data[i+2];   // ウィンブルドン
+        const us  = data[i+3];   // 全米
+        %>
+        <tr>
+            <td><%= aus ? aus.year : '' %></td>
+
+            <td>
+            <% if(aus) { %>
+                <a href="/tennis/<%= i %>"><%= aus.name %></a><br>
+                <small>優勝: <%= aus.champion %></small>
+            <% } %>
+            </td>
+
+            <td>
+            <% if(fre) { %>
+                <a href="/tennis/<%= i+1 %>"><%= fre.name %></a><br>
+                <small>優勝: <%= fre.champion %></small>
+            <% } %>
+            </td>
+
+            <td>
+            <% if(wim) { %>
+                <a href="/tennis/<%= i+2 %>"><%= wim.name %></a><br>
+                <small>優勝: <%= wim.champion %></small>
+            <% } %>
+            </td>
+
+            <td>
+            <% if(us) { %>
+                <a href="/tennis/<%= i+3 %>"><%= us.name %></a><br>
+                <small>優勝: <%= us.champion %></small>
+            <% } %>
+            </td>
+        </tr>
+        <% } %>
+    </tbody>
+    </table>
+    <br>
+    <a href="/tennis/create">追加</a>
+</body>
+</html>
