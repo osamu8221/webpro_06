@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.year %>年の編集</title>
+</head>
+<body>
+  <h2><%= data.year %>年の編集</h2>
+  <form action="/baseball/update/<%= data.id %>" method="POST">
+    <h3>基本情報</h3>
+    <table>
+      <tr><td>Year</td><td><input type="text" name="year" value="<%= data.year %>"></td></tr>
+      <tr><td>日本一</td><td><input type="text" name="series_champ" value="<%= data.series_champ %>"></td></tr>
+      <tr><td>MVP</td><td><input type="text" name="series_mvp" value="<%= data.series_mvp %>"></td></tr>
+      <tr><td>正力賞</td><td><input type="text" name="shoriki" value="<%= data.shoriki %>"></td></tr>
+      <tr><td>沢村賞</td><td><input type="text" name="sawamura" value="<%= data.sawamura %>"></td></tr>
+    </table>
+
+    <div style="display: flex; gap: 20px;">
+        <div>
+            <h3>セ・リーグ</h3>
+            <table>
+                <tr><td>優勝</td><td><input type="text" name="c_pennant" value="<%= data.c_pennant %>"></td></tr>
+                <tr><td>MVP</td><td><input type="text" name="c_mvp" value="<%= data.c_mvp %>"></td></tr>
+                <tr><td>打率</td><td><input type="text" name="c_avg" value="<%= data.c_avg %>"></td></tr>
+                <tr><td>本塁打</td><td><input type="text" name="c_hr" value="<%= data.c_hr %>"></td></tr>
+                <tr><td>打点</td><td><input type="text" name="c_rbi" value="<%= data.c_rbi %>"></td></tr>
+                <tr><td>盗塁</td><td><input type="text" name="c_sb" value="<%= data.c_sb %>"></td></tr>
+                <tr><td>出塁率</td><td><input type="text" name="c_obp" value="<%= data.c_obp %>"></td></tr>
+                <tr><td>勝利</td><td><input type="text" name="c_win" value="<%= data.c_win %>"></td></tr>
+                <tr><td>防御率</td><td><input type="text" name="c_era" value="<%= data.c_era %>"></td></tr>
+                <tr><td>勝率</td><td><input type="text" name="c_win_pct" value="<%= data.c_win_pct %>"></td></tr>
+                <tr><td>奪三振</td><td><input type="text" name="c_so" value="<%= data.c_so %>"></td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>パ・リーグ</h3>
+            <table>
+                <tr><td>優勝</td><td><input type="text" name="p_pennant" value="<%= data.p_pennant %>"></td></tr>
+                <tr><td>MVP</td><td><input type="text" name="p_mvp" value="<%= data.p_mvp %>"></td></tr>
+                <tr><td>打率</td><td><input type="text" name="p_avg" value="<%= data.p_avg %>"></td></tr>
+                <tr><td>本塁打</td><td><input type="text" name="p_hr" value="<%= data.p_hr %>"></td></tr>
+                <tr><td>打点</td><td><input type="text" name="p_rbi" value="<%= data.p_rbi %>"></td></tr>
+                <tr><td>盗塁</td><td><input type="text" name="p_sb" value="<%= data.p_sb %>"></td></tr>
+                <tr><td>出塁率</td><td><input type="text" name="p_obp" value="<%= data.p_obp %>"></td></tr>
+                <tr><td>勝利</td><td><input type="text" name="p_win" value="<%= data.p_win %>"></td></tr>
+                <tr><td>防御率</td><td><input type="text" name="p_era" value="<%= data.p_era %>"></td></tr>
+                <tr><td>勝率</td><td><input type="text" name="p_win_pct" value="<%= data.p_win_pct %>"></td></tr>
+                <tr><td>奪三振</td><td><input type="text" name="p_so" value="<%= data.p_so %>"></td></tr>
+            </table>
+        </div>
+    </div>
+ 
+    <br>
+    <input type="submit" value="更新">
+  </form>
+  <a href="/baseball">一覧に戻る</a>|
+    <a href="/baseball/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')">このデータを削除する</a>
+</body>
+</html>

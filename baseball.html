@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>データ追加</title>
+</head>
+<body>
+    <h2>新規データ登録</h2>
+    <form action="/baseball" method="POST">
+        <h3>基本情報</h3>
+        <label>Year: <input type="text" name="year" required></label><br>
+        <label>日本一: <input type="text" name="series_champ"></label><br>
+        <label>MVP: <input type="text" name="series_mvp"></label><br>
+        <label>正力賞: <input type="text" name="shoriki"></label><br>
+        <label>沢村賞: <input type="text" name="sawamura"></label><br>
+
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <h3>セ・リーグ</h3>
+                <label>優勝: <input type="text" name="c_pennant"></label><br>
+                <label>MVP: <input type="text" name="c_mvp"></label><br>
+                <label>打率: <input type="text" name="c_avg"></label><br>
+                <label>本塁打: <input type="text" name="c_hr"></label><br>
+                <label>打点: <input type="text" name="c_rbi"></label><br>
+                <label>盗塁: <input type="text" name="c_sb"></label><br>
+                <label>出塁率: <input type="text" name="c_obp"></label><br>
+                <label>勝利: <input type="text" name="c_win"></label><br>
+                <label>防御率: <input type="text" name="c_era"></label><br>
+                <label>勝率: <input type="text" name="c_win_pct"></label><br>
+                <label>奪三振: <input type="text" name="c_so"></label><br>
+            </div>
+            <div>
+                <h3>パ・リーグ</h3>
+                <label>優勝: <input type="text" name="p_pennant"></label><br>
+                <label>MVP: <input type="text" name="p_mvp"></label><br>
+                <label>打率: <input type="text" name="p_avg"></label><br>
+                <label>本塁打: <input type="text" name="p_hr"></label><br>
+                <label>打点: <input type="text" name="p_rbi"></label><br>
+                <label>盗塁: <input type="text" name="p_sb"></label><br>
+                <label>出塁率: <input type="text" name="p_obp"></label><br>
+                <label>勝利: <input type="text" name="p_win"></label><br>
+                <label>防御率: <input type="text" name="p_era"></label><br>
+                <label>勝率: <input type="text" name="p_win_pct"></label><br>
+                <label>奪三振: <input type="text" name="p_so"></label><br>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="登録">
+    </form>
+    <a href="/baseball">戻る</a>
+</body>
+</html>

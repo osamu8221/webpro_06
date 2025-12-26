@@ -135,7 +135,6 @@ app.post("/tennis", (req, res) => {
   res.redirect('/tennis');
 });
 
-
 app.get("/tennis/edit/:number", (req, res) => {
   const number = req.params.number;
   const detail = tennis[ number ];

@@ -18,8 +18,6 @@
     </thead>
     <tbody>
         <% 
-      // データは全豪→全仏→ウィンブルドン→全米の順で並んでいる前提で、
-      // 4つ飛ばしでループを回して1行(1年分)を作ります
         for( let i = 0; i < data.length; i += 4 ) { 
         const aus = data[i];     // 全豪
         const fre = data[i+1];   // 全仏

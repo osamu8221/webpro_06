@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NPB 歴代優勝・表彰</title>
+</head>
+<body>
+  <h2>NPB 歴代優勝・表彰</h2>
+  <table border="1">
+    <tr>
+        <th>年度</th>
+        <th>日本一</th>
+        <th>シリーズMVP</th>
+        <th>沢村賞</th>
+    </tr>
+      <% for( let row of data ) { %>
+        <tr>
+            <td><a href="/baseball/<%= row.id %>"><%= row.year %></a></td>
+            <td><%= row.series_champ %></td>
+            <td><%= row.series_mvp %></td>
+            <td><%= row.sawamura %></td>
+        </tr>
+      <% } %>
+  </table>
+  <br>
+  <a href="/baseball/create">追加</a>
+</body>
+</html>

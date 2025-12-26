@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.year %>年 詳細</title>
+</head>
+<body>
+    <h2><%= data.year %>年 シーズン詳細</h2>
+    
+    <table border="1" style="margin-bottom: 20px;">
+        <tr><th>日本シリーズ優勝</th><td><%= data.series_champ %></td></tr>
+        <tr><th>シリーズMVP</th><td><%= data.series_mvp %></td></tr>
+        <tr><th>正力松太郎賞</th><td><%= data.shoriki %></td></tr>
+        <tr><th>沢村賞</th><td><%= data.sawamura %></td></tr>
+    </table>
+
+    <div style="display: flex; gap: 20px;">
+        
+        <div style="flex: 1;">
+            <h3 style="background-color: #cfc;">セ・リーグ</h3>
+            <table border="1" width="100%">
+                <tr><th>優勝</th><td><%= data.c_pennant %></td></tr>
+                <tr><th>MVP</th><td><%= data.c_mvp %></td></tr>
+                <tr><th>首位打者</th><td><%= data.c_avg %></td></tr>
+                <tr><th>本塁打王</th><td><%= data.c_hr %></td></tr>
+                <tr><th>打点王</th><td><%= data.c_rbi %></td></tr>
+                <tr><th>盗塁王</th><td><%= data.c_sb %></td></tr>
+                <tr><th>最高出塁率</th><td><%= data.c_obp %></td></tr>
+                <tr><th>最多勝</th><td><%= data.c_win %></td></tr>
+                <tr><th>防御率</th><td><%= data.c_era %></td></tr>
+                <tr><th>勝率</th><td><%= data.c_win_pct %></td></tr>
+                <tr><th>奪三振</th><td><%= data.c_so %></td></tr>
+            </table>
+        </div>
+
+        <div style="flex: 1;">
+            <h3 style="background-color: #ccf;">パ・リーグ</h3>
+            <table border="1" width="100%">
+                <tr><th>優勝</th><td><%= data.p_pennant %></td></tr>
+                <tr><th>MVP</th><td><%= data.p_mvp %></td></tr>
+                <tr><th>首位打者</th><td><%= data.p_avg %></td></tr>
+                <tr><th>本塁打王</th><td><%= data.p_hr %></td></tr>
+                <tr><th>打点王</th><td><%= data.p_rbi %></td></tr>
+                <tr><th>盗塁王</th><td><%= data.p_sb %></td></tr>
+                <tr><th>最高出塁率</th><td><%= data.p_obp %></td></tr>
+                <tr><th>最多勝</th><td><%= data.p_win %></td></tr>
+                <tr><th>防御率</th><td><%= data.p_era %></td></tr>
+                <tr><th>勝率</th><td><%= data.p_win_pct %></td></tr>
+                <tr><th>奪三振</th><td><%= data.p_so %></td></tr>
+            </table>
+        </div>
+
+    </div>
+   
+    <br>
+    <a href="/baseball/edit/<%= id %>">このデータを編集する</a> 
+    <br><br>
+    <a href="/baseball">一覧に戻る</a>
+</body>
+</html>
