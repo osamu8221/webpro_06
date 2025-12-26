@@ -1,4 +1,3 @@
-// 提出課題
 "use strict"; 
 
 const express = require("express");
