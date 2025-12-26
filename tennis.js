@@ -140,7 +140,7 @@ app.get("/tennis/edit/:number", (req, res) => {
   const detail = tennis[ number ];
   res.render('tennis_edit', {id: number, data: detail} );
 });
-
+ 
 
 app.post("/tennis/update/:number", (req, res) => {
   const n = req.params.number;

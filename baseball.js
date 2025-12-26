@@ -85,7 +85,7 @@ let npb = [
     {   id: 18, year: 2023,series_champ: "阪神", series_mvp: "近本光司", shoriki: "岡田彰布", sawamura: "山本由伸",
         c_pennant: "阪神", c_mvp: "村上頌樹", c_avg: "宮﨑敏郎", c_hr: "岡本和真", c_rbi: "牧秀悟", c_sb: "近本光司", c_obp: "大山悠輔", c_win: "東克樹", c_era: "村上頌樹", c_win_pct: "東克樹", c_so: "今永昇太",
         p_pennant: "オリックス", p_mvp: "山本由伸", p_avg: "頓宮裕真", p_hr: "近藤健介/ポランコ/浅村栄斗", p_rbi: "近藤健介", p_sb: "周東佑京/小深田大翔", p_obp: "近藤健介", p_win: "山本由伸", p_era: "山本由伸", p_win_pct: "山本由伸", p_so: "山本由伸"
-    },
+    }, 
     {   id: 19, year: 2024,series_champ: "DeNA", series_mvp: "桑原将志", shoriki: "三浦大輔", sawamura: "該当者なし",
         c_pennant: "巨人", c_mvp: "菅野智之", c_avg: "オースティン", c_hr: "村上宗隆", c_rbi: "村上宗隆", c_sb: "近本光司", c_obp: "サンタナ", c_win: "菅野智之", c_era: "高橋宏斗", c_win_pct: "菅野智之", c_so: "戸郷翔征",
         p_pennant: "ソフトバンク", p_mvp: "近藤健介", p_avg: "近藤健介", p_hr: "山川穂高", p_rbi: "山川穂高", p_sb: "周東佑京", p_obp: "近藤健介", p_win: "伊藤大海/有原航平", p_era: "モイネロ", p_win_pct: "伊藤大海", p_so: "今井達也"
